@@ -1,3 +1,25 @@
 PyMySQL==0.9.3
 Flask==1.0.3
 redis==3.4.1
+# 静态代码分析
+flake8==6.1.0
+mypy==1.8.0
+bandit==1.7.5
+pylint==3.0.3
+
+# AST解析
+astroid==3.0.2
+tree-sitter==0.20.2
+
+# AI模型集成
+transformers==4.37.2
+torch==2.2.0
+openai==1.12.0
+
+# 代码格式化
+black==23.12.0
+isort==5.13.2
+
+# 项目构建
+setuptools==69.0.3
+wheel==0.42.0
