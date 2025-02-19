@@ -1,0 +1,12 @@
+openai:
+  api_key: YOUR_API_KEY
+  model_name: gpt-4-turbo
+  temperature: 0.3
+  max_tokens: 1024
+
+anthropic:
+  api_key: CLAUDE_API_KEY
+  model_name: claude-3-opus
+
+local_models:
+  codegen2_path: /models/codegen2-3.7B
