@@ -3,9 +3,11 @@ import astunparse
 
 class ASTParser:
     def __init__(self, source_code: str):
-        self.tree = ast.parse(source_code)
         self.raw_code = source_code
-
+        try:
+            self.tree = ast.parse(source_code)
+        except SyntaxError as e:
+            raise ValueError(f"Invalid Python syntax at line {e.lineno}: {e.msg}")
     def get_function_defs(self) -> list:
         """提取所有函数定义元数据"""
         return [{
