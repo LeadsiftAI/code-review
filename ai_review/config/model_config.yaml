@@ -4,8 +4,7 @@ openai:
   temperature: 0.3
   max_tokens: 1024
 anthropic:
-  api_key: CLAUDE_API_KEY
+  api_key: ${ANTHROPIC_API_KEY}
   model_name: claude-3-opus
-
 local_models:
   codegen2_path: /models/codegen2-3.7B
