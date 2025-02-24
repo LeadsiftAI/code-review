@@ -1,6 +1,12 @@
+import ast
+
 def detect_unsafe_functions(tree) -> list:
     """识别高危函数调用"""
-    unsafe_calls = {'eval', 'exec', 'pickle.loads'}
+    unsafe_calls = {
+        'eval', 'exec', 'pickle.loads', 'pickle.load',
+        'subprocess.call', 'subprocess.Popen', 'os.system',
+        'tempfile.mktemp'  # Use mkstemp instead
+    }
     return [{
         'msg': f"检测到不安全函数调用: {node.func.id}",
         'level': 'critical',
