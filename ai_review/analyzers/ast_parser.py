@@ -22,3 +22,6 @@ class ASTAnalyzer(ast.NodeVisitor):
         if isinstance(node.targets[0].ctx, ast.Store):
             if not any(ref.id == node.targets[0].id for ref in self.references):
                 self.findings.append(f"未使用变量: {node.targets[0].id}")
+    
+    def visit_Assert(self, node: ast.Assert) -> ast.Any:
+        return super().visit_Assert(node)
