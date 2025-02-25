@@ -37,7 +37,10 @@ class TokenHandler:
       method.
     """
 
-    def __init__(self, pr=None, vars: dict = {}, system="", user=""):
+    def __init__(self, pr=None, vars: dict = None, system="", user=""):
+         if vars is None:
+             vars = {}
+         ...
         """
         Initializes the TokenHandler object.
 
