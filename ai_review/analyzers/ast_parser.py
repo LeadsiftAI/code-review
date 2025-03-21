@@ -7,7 +7,10 @@ class ASTAnalyzer(ast.NodeVisitor):
 
     def visit_FunctionDef(self, node):
         # 计算圈复杂度
-        complexity = len(node.body) 
+        complexity = len(node.body)
+        # 计算函数复杂度
+        complexity = self.calculate_function_complexity(node)
+        # 计算函数复杂度
         self.function_complexity[node.name] = complexity
         self.generic_visit(node)
 
