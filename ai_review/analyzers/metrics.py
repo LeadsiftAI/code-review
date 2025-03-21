@@ -17,7 +17,8 @@ def filter_ignored(files, platform = 'github'):
         if isinstance(glob_setting, str):  # --ignore.glob=[.*utils.py], --ignore.glob=.*utils.py
             glob_setting = glob_setting.strip('[]').split(",")
         patterns += [fnmatch.translate(glob) for glob in glob_setting]
-
+        print(patterns)
+        
         # compile all valid patterns
         compiled_patterns = []
         for r in patterns:
