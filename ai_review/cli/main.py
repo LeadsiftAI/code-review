@@ -45,6 +45,9 @@ def review(file_path: str, ai: bool):
     if ai:
         ai_handler = AIModelHandler()
         ai_comment = ai_handler.get_code_review(code, {'findings': findings})
+        print(ai_comment)
+        print(type(ai_comment))
+        print(ai_comment.keys())
         click.echo(f"\nAI审查建议:\n{ai_comment}")
     
     # 输出格式化结果
